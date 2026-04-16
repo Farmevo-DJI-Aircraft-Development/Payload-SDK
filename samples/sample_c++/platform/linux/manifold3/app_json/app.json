@@ -5,7 +5,7 @@
     "platform": "manifold3",
     "name":{
         "name_cn": "测试demo",
-        "name_en": "psdk-demo",
+        "name_en": "psdk-demo-cpp",
         "name_jp": "テストデモ",
         "name_fr": "Démo de test"
     },
@@ -37,7 +37,7 @@
     },
     "ver_min": "00.00.00.00",
     "ver_max": "99.99.99.99",
-    "bin": "../../../../../../build/bin/dji_sdk_demo_on_manifold3",
+    "bin": "../../../../../../build/bin/dji_sdk_demo_on_manifold3_cxx",
     "userconfig": [
         "../../../../../../samples"
     ]

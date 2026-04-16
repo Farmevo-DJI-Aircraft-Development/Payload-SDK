@@ -113,3 +113,18 @@ endif()
 
 target_link_libraries(${PROJECT_NAME} m)
 target_link_libraries(${PROJECT_NAME} dl)
+
+# set app.json and build_dpk.sh path
+set(JSON_FILE ${CMAKE_CURRENT_SOURCE_DIR}/app_json/app.json)
+set(SCRIPT_FILE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../tools/build_dpk/build_dpk.sh)
+
+# set output dpk path
+set(OUTPUT_PACKAGE ${CMAKE_BINARY_DIR}/dpk)
+
+# generate .dpk app package
+add_custom_command(TARGET ${PROJECT_NAME}
+    POST_BUILD
+    COMMAND bash ${SCRIPT_FILE} -i ${JSON_FILE} -o ${OUTPUT_PACKAGE}
+    DEPENDS ${JSON_FILE}
+    COMMENT "Running build_dpk.sh, generating .dpk app package from app.json file"
+)
